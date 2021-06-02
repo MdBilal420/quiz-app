@@ -1,10 +1,12 @@
 
 export type Option = {
+    id: string,
     text: string;
     isRight: boolean;
 };
 
 export type Question = {
+    id: string,
     question: string;
     points: number;
     options: Option[];

@@ -16,5 +16,6 @@ export type QuizContextTypes = {
 export type Action =
     | { type: "INCREMENT_QUESTION_NUMBER"; payload?: number }
     | { type: "SET_QUIZ"; payload: Quiz }
+    | { type: "UPDATE_SCORE"; payload: number }
 
 

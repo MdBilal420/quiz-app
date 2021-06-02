@@ -38,6 +38,11 @@ const quizReducer = (state: State, action: Action): State => {
                 ...state,
                 selectedQuiz: action.payload
             }
+        case "UPDATE_SCORE":
+            return {
+                ...state,
+                score: state.score + action.payload
+            }
         default:
             return state
     }

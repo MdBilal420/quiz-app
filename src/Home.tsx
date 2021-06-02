@@ -1,8 +1,5 @@
 import React from 'react'
 // import { Quiz } from "../quiz.types";
-import {
-    Container,
-} from "@chakra-ui/react"
 import { quizzes } from "./data/quizDB"
 import QuizCard from './components/QuizCard'
 
@@ -10,7 +7,7 @@ import QuizCard from './components/QuizCard'
 const Home = () => {
 
     return (
-        <Container>
+        <div style={{ display: "flex" }}>
             {quizzes.quizList.map((quiz) => {
                 return <QuizCard
                     key={quiz.quizId}
@@ -21,7 +18,7 @@ const Home = () => {
                     cover={quiz.cover}
                 />
             })}
-        </Container>
+        </div>
     )
 }
 
