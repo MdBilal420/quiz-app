@@ -6,7 +6,7 @@ export const quizzes: QuizList = {
         {
             quizId: uuidv4(),
             quizName: "Marvel Cinematic Universe",
-            playTime: "5 minutes",
+            playTime: "3 minutes",
             cover: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
             questions: [
                 {
@@ -68,7 +68,7 @@ export const quizzes: QuizList = {
         {
             quizId: uuidv4(),
             quizName: "Sports",
-            playTime: "5 minutes",
+            playTime: "3 minutes",
             cover: "https://images.unsplash.com/photo-1471295253337-3ceaaedca402?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=748&q=80",
             questions: [
                 {
@@ -143,7 +143,7 @@ export const quizzes: QuizList = {
         {
             quizId: uuidv4(),
             quizName: "Entertainment",
-            playTime: "5 minutes",
+            playTime: "3 minutes",
             cover: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=738&q=80",
             questions: [
                 {

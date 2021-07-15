@@ -1,5 +1,5 @@
 
-import { Flex, Table, Thead, Tbody, Tr, Th, Td, Tfoot, Heading } from '@chakra-ui/react'
+import { Flex, Table, Thead, Tbody, Tr, Th, Td, Heading } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useAuth } from '../context/auth-context'
 
@@ -16,7 +16,6 @@ const Score = () => {
         })()
     }, [getAllScore])
 
-    console.log(scores)
     return (
         <Flex direction="column" justifyContent="center" alignItems="center" padding={5}>
             <Heading mt={10}>Leaderboard</Heading>
@@ -32,7 +31,7 @@ const Score = () => {
 
                     {
                         scores.map((score: any) => {
-                            return (<Tr>
+                            return (<Tr key={score._id}>
                                 <Td>{score.username}</Td>
                                 <Td>{score.genre}</Td>
                                 <Td isNumeric>{score.score}</Td>

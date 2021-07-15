@@ -33,7 +33,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     const registerUser = async (username: string, email: string, password: string) => {
         try {
-            const res = await axios.post('http://localhost:5000/signup', { username, email, password })
+            const res = await axios.post('https://queez-backend.mdbilal420.repl.co/signup', { username, email, password })
             console.log(res)
             if (res.status === 200) {
                 authDispatch({ type: "SIGNUP", payload: res.data })
@@ -47,7 +47,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     const loginUser = async (email: string, password: string) => {
         try {
-            const res = await axios.post('http://localhost:5000/login', { email, password });
+            const res = await axios.post('https://queez-backend.mdbilal420.repl.co/login', { email, password });
             if (res.data.success) {
                 authDispatch({ type: "LOGIN", payload: res.data })
             }
@@ -62,7 +62,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     const saveScore = async (username: string | undefined, genre: string | undefined, score: number | undefined) => {
         if (authState.user) {
-            const res = await axios.post('http://localhost:5000/score/addScore', {
+            const res = await axios.post('https://queez-backend.mdbilal420.repl.co/score/addScore', {
                 username, genre, score
             })
             console.log("result", res)
@@ -70,7 +70,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     }
 
     const getAllScore = async () => {
-        const res = await axios.get('http://localhost:5000/score/getAllScores')
+        const res = await axios.get('https://queez-backend.mdbilal420.repl.co/score/getAllScores')
         console.log(res)
         return res.data
     }

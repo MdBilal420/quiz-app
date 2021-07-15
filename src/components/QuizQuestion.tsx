@@ -1,5 +1,6 @@
 import { Container, Text, Box, Center } from "@chakra-ui/react"
 
+
 import React, { useState } from 'react'
 import { useNavigate } from "react-router"
 import { useAuth } from "../context/auth-context"
@@ -52,7 +53,7 @@ const QuizQuestion = ({ question }: { question: Question }) => {
     }
 
     return (
-        <Container marginTop="20" bg="gray.300" padding="10" borderRadius="15">
+        <Container marginTop="10" padding="10" borderRadius="15">
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
                 <Text as="mark">{state.currentQuestionNumber + 1}/{state.selectedQuiz?.questions.length}</Text>
                 <Text>Score: {state.score}</Text>
@@ -78,13 +79,13 @@ const QuizQuestion = ({ question }: { question: Question }) => {
 
             {state.currentQuestionNumber + 1 === state.selectedQuiz?.questions.length
                 ?
-                <Box as="button" borderRadius="md" bg="dodgerblue" color="white" px={4} h={8} marginTop="5"
+                <Box as="button" borderRadius="md" bg="teal" color="white" px={7} h={14} marginTop="5"
                     onClick={submitQuiz}
                 >
                     Submit
                 </Box>
                 :
-                <Box as="button" borderRadius="md" bg="dodgerblue" color="white" px={4} h={8} marginTop="5"
+                <Box as="button" borderRadius="md" bg="dodgerblue" color="white" px={7} h={14} marginTop="5"
                     onClick={nextQuestion}
                 >
                     Next

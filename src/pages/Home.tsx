@@ -1,18 +1,13 @@
-import React from 'react'
-// import { Quiz } from "../quiz.types";
 import { quizzes } from "../data/quizDB"
 import QuizCard from '../components/QuizCard'
-import { useAuth } from '../context/auth-context'
+import { Flex } from '@chakra-ui/react'
 
 
 const Home = () => {
 
-    const { authState } = useAuth()
-
-    console.log(authState)
 
     return (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <Flex wrap="wrap">
             {quizzes.quizList.map((quiz) => {
                 return <QuizCard
                     key={quiz.quizId}
@@ -23,7 +18,7 @@ const Home = () => {
                     cover={quiz.cover}
                 />
             })}
-        </div>
+        </Flex>
     )
 }
 

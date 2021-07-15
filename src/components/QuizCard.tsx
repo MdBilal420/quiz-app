@@ -18,39 +18,37 @@ const QuizCard = ({ quizId, quizName, questions, playTime, cover }: Quiz) => {
 
 
     return (
-        <div style={{ margin: "20px", backgroundColor: "#CBD5E0" }}>
-            <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-                <Image src={cover} alt={quizName} />
-                <Box
-                    mt="1"
-                    fontWeight="semibold"
-                    as="h4"
-                    lineHeight="tight"
-                    isTruncated
-                    margin="1"
-                >
-                    {quizName}
-                </Box>
-                <Box margin="1">
-                    Time:{"    "}
-                    <Box as="span" margin="1" color="gray.600" fontSize="sm">
-                        {playTime}
-                    </Box>
-                </Box>
-                <Box margin="1">
-                    Number of questions:{"    "}
-                    <Box as="span" margin="1" color="gray.600" fontSize="sm">
-                        {questions.length}
-                    </Box>
-                </Box>
-                <Box as="button" borderRadius="md" margin="2" bg="gray.800" color="white" px={4} h={8}
-                    onClick={() => startQuiz(quizId)}
-                >
-                    Start Quiz
-                </Box>
-
+        <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" m={7} p={3} spacing={5}>
+            <Image src={cover} alt={quizName} />
+            <Box
+                mt="1"
+                fontWeight="bolder"
+                as="h1"
+                lineHeight="tight"
+                isTruncated
+                margin="1"
+            >
+                {quizName}
             </Box>
-        </div>
+            <Box margin="1">
+                Time:{"    "}
+                <Box as="span" margin="1" color="gray.600" fontSize="md" fontWeight="bold">
+                    {playTime}
+                </Box>
+            </Box>
+            <Box margin="1">
+                Number of questions:{"    "}
+                <Box as="span" margin="1" color="gray.600" fontSize="md" fontWeight="bold">
+                    {questions.length}
+                </Box>
+            </Box>
+            <Box as="button" borderRadius="md" margin="2" bg="gray.800" color="white" px={5} h={10}
+                onClick={() => startQuiz(quizId)}
+            >
+                Start Quiz
+            </Box>
+
+        </Box>
     )
 }
 

@@ -38,7 +38,6 @@ const Login = () => {
                     <FormLabel>Email address</FormLabel>
                     <Input type="email" placeholder="Email"
                         name="email"
-                        variant="filled"
                         mb={3}
                         onChange={(e) => setEmail(e.target.value)}
                     />
@@ -46,7 +45,6 @@ const Login = () => {
                     <FormLabel>Password</FormLabel>
                     <Input placeholder="Password" type="password"
                         name="password"
-                        variant="filled"
                         mb={3}
                         onChange={(e) => setPassword(e.target.value)}
                     />
