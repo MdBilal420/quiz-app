@@ -42,7 +42,7 @@ const Header = () => {
                                     {name && name.charAt(0).toUpperCase() + name.slice(1)} <ChevronDownIcon />
                                 </MenuButton>
                                 <MenuList>
-                                    <MenuItem onClick={() => navigate("/score")}>Score</MenuItem>
+                                    <MenuItem onClick={() => navigate("/score")}>Leaderboard</MenuItem>
                                     <MenuDivider />
                                     <MenuItem onClick={LogOut}>Logout</MenuItem>
                                 </MenuList>
@@ -50,7 +50,7 @@ const Header = () => {
 
                             :
                             <>
-
+                                <Flex p={3} pt={5} fontSize={20}><Link to="/score">Scorecard</Link></Flex>
                                 <Flex p={3} pt={5} fontSize={20}><Link to="/login">Login</Link></Flex>
                             </>
 

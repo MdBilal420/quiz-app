@@ -1,5 +1,5 @@
 
-import { Flex, Table, Thead, Tbody, Tr, Th, Td, Heading } from '@chakra-ui/react'
+import { Table, Thead, Tbody, Tr, Th, Td, Heading, Container, Center } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useAuth } from '../context/auth-context'
 
@@ -7,18 +7,22 @@ const Score = () => {
 
     const { getAllScore } = useAuth()
     const [scores, setScores] = useState<any>([])
+    const [load, setLoad] = useState<boolean>(true)
 
     useEffect(() => {
         (async () => {
             const res = await getAllScore()
             console.log(res)
             setScores(res)
+            setLoad(false)
         })()
     }, [getAllScore])
 
     return (
-        <Flex direction="column" justifyContent="center" alignItems="center" padding={5}>
-            <Heading mt={10}>Leaderboard</Heading>
+        <Container justifyContent="center" alignItems="center" padding={5} >
+            <Heading m={10}>
+                <Center>Leaderboard</Center></Heading>
+            {load && <h3>Loadingg</h3>}
             <Table size="md" padding={3}>
                 <Thead>
                     <Tr>
@@ -41,7 +45,7 @@ const Score = () => {
                 </Tbody>
             </Table>
 
-        </Flex >
+        </Container >
     )
 }
 
