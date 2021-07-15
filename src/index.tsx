@@ -5,6 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QuizProvider } from './context/quiz-context';
+import { AuthProvider } from './context/auth-context';
 
 
 
@@ -14,7 +15,9 @@ ReactDOM.render(
     <ChakraProvider>
       <BrowserRouter>
         <QuizProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </QuizProvider>
       </BrowserRouter>
     </ChakraProvider>
@@ -26,3 +29,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+/* <reference types="react-scripts" /> */

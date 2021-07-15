@@ -1,13 +1,18 @@
 import React from 'react'
 // import { Quiz } from "../quiz.types";
-import { quizzes } from "./data/quizDB"
-import QuizCard from './components/QuizCard'
+import { quizzes } from "../data/quizDB"
+import QuizCard from '../components/QuizCard'
+import { useAuth } from '../context/auth-context'
 
 
 const Home = () => {
 
+    const { authState } = useAuth()
+
+    console.log(authState)
+
     return (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
             {quizzes.quizList.map((quiz) => {
                 return <QuizCard
                     key={quiz.quizId}

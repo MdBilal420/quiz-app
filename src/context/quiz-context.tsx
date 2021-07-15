@@ -1,11 +1,14 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { State, Action, QuizContextTypes } from './quiz-context.types';
+import { QuizStateTypes, QuizContextTypes } from './quiz-context.types';
+import { quizReducer } from "./quizReducer"
 
 
-export const initialState: State = {
+export const initialState: QuizStateTypes = {
     score: 0,
     currentQuestionNumber: 0,
-    selectedQuiz: null
+    selectedQuiz: null,
+    correct: 0,
+    inCorrect: 0
 }
 
 
@@ -26,24 +29,3 @@ export const useQuiz = () => {
     return useContext(QuizContext)
 }
 
-const quizReducer = (state: State, action: Action): State => {
-    switch (action.type) {
-        case "INCREMENT_QUESTION_NUMBER":
-            return {
-                ...state,
-                currentQuestionNumber: state.currentQuestionNumber + 1
-            }
-        case "SET_QUIZ":
-            return {
-                ...state,
-                selectedQuiz: action.payload
-            }
-        case "UPDATE_SCORE":
-            return {
-                ...state,
-                score: state.score + action.payload
-            }
-        default:
-            return state
-    }
-}

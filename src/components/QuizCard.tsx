@@ -18,7 +18,7 @@ const QuizCard = ({ quizId, quizName, questions, playTime, cover }: Quiz) => {
 
 
     return (
-        <div style={{ margin: "20px" }}>
+        <div style={{ margin: "20px", backgroundColor: "#CBD5E0" }}>
             <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
                 <Image src={cover} alt={quizName} />
                 <Box
@@ -43,11 +43,11 @@ const QuizCard = ({ quizId, quizName, questions, playTime, cover }: Quiz) => {
                         {questions.length}
                     </Box>
                 </Box>
-                <Box as="button" borderRadius="md" margin="2" bg="dodgerblue" color="white" px={4} h={8}
+                <Box as="button" borderRadius="md" margin="2" bg="gray.800" color="white" px={4} h={8}
                     onClick={() => startQuiz(quizId)}
                 >
                     Start Quiz
-            </Box>
+                </Box>
 
             </Box>
         </div>
