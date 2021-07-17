@@ -73,7 +73,7 @@ export const quizzes: QuizList = {
             questions: [
                 {
                     id: uuidv4(),
-                    question: "Who is master-blaster?",
+                    question: "Who is known as master-blaster?",
                     points: 5,
                     options: [
                         {
@@ -95,7 +95,7 @@ export const quizzes: QuizList = {
                 },
                 {
                     id: uuidv4(),
-                    question: "Who won the FIFA World Cup 2018?",
+                    question: "Which team won the FIFA World Cup 2018?",
                     points: 5,
                     options: [
                         {
@@ -148,66 +148,66 @@ export const quizzes: QuizList = {
             questions: [
                 {
                     id: uuidv4(),
-                    question: "Who is master-blaste?",
+                    question: "Which film is rated the best film of all time in IMDB?",
                     points: 5,
                     options: [
                         {
                             id: uuidv4(),
-                            text: "Lara",
+                            text: "Titanic",
                             isRight: false
                         },
                         {
                             id: uuidv4(),
-                            text: "Sachin",
+                            text: "The Shawshank Redemption",
                             isRight: true
                         },
                         {
                             id: uuidv4(),
-                            text: "Ponting",
+                            text: "Gravity",
                             isRight: false
                         }
                     ]
                 },
                 {
                     id: uuidv4(),
-                    question: "Who won the FIFA World Cup 2018?",
+                    question: "Which Indian musician have won the OSCAR ?",
                     points: 5,
                     options: [
                         {
                             id: uuidv4(),
-                            text: "France",
+                            text: "Pritam",
                             isRight: true
                         },
                         {
                             id: uuidv4(),
-                            text: "Brazil",
+                            text: "Kishore Kumar",
                             isRight: false
                         },
                         {
                             id: uuidv4(),
-                            text: "Germany",
+                            text: "A.R. Rehman",
                             isRight: false
                         }
                     ]
                 },
                 {
                     id: uuidv4(),
-                    question: "What is India's national sports?",
+                    question: "Who is the KING KHAN of Bollywood?",
                     points: 15,
                     options: [
                         {
                             id: uuidv4(),
-                            text: "Football",
+                            text: "Shahrukh Khan",
                             isRight: false
                         },
                         {
                             id: uuidv4(),
-                            text: "Cricket",
+                            text: "Aamir Khan",
                             isRight: false
                         },
                         {
                             id: uuidv4(),
-                            text: "Hockey",
+                            text: "Salman Khan",
                             isRight: true
                         }
                     ]

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {
-    FormControl, FormLabel, Input, Button, Flex, Heading, Text
+    Alert, AlertIcon, AlertTitle, CloseButton,
+    FormControl, FormLabel, Input, Button, Flex, Heading, Text, CircularProgress
 } from "@chakra-ui/react"
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/auth-context'
@@ -9,20 +10,23 @@ import { Link } from 'react-router-dom'
 
 const Signup = () => {
 
-    const { registerUser } = useAuth()
+    const { authState, registerUser } = useAuth()
     const navigate = useNavigate()
 
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [load, setLoad] = useState<boolean>(false)
 
 
     const handleClick = async (e: any) => {
+        setLoad(true)
         e.preventDefault()
         const res = await registerUser(username, email, password)
-        console.log(res)
+
         if (res) {
-            navigate("/")
+            setLoad(false)
+            navigate("/login")
         } else {
             setUsername("")
             setEmail("")
@@ -36,6 +40,11 @@ const Signup = () => {
                 <Heading mb={6}>Sign Up</Heading>
 
                 <FormControl>
+                    {authState.error && <Alert status="error">
+                        <AlertIcon />
+                        <AlertTitle mr={2}>Invalid Credentials</AlertTitle>
+                        <CloseButton onClick={() => navigate('/login')} position="absolute" right="8px" top="8px" />
+                    </Alert>}
                     <FormLabel>Username</FormLabel>
                     <Input placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)} />
 
@@ -52,7 +61,7 @@ const Signup = () => {
                         type="submit"
                         onClick={handleClick}
                     >
-                        Submit
+                        {!load ? "Submit" : <CircularProgress isIndeterminate color="gray.800" />}
                     </Button>
 
                 </FormControl>

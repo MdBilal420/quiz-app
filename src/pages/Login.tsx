@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {
     FormControl, FormLabel, Input, Button, Flex, Heading, Text, Alert, AlertIcon, AlertTitle, CloseButton
+    , CircularProgress
 } from "@chakra-ui/react"
 import { useAuth } from '../context/auth-context';
 import { useNavigate } from 'react-router-dom';
@@ -12,16 +13,22 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const { authState, loginUser } = useAuth()
     const navigate = useNavigate()
+    const [load, setLoad] = useState<boolean>(false)
 
-    const login = async (e: any) => {
+    const handleClick = async (e: any) => {
+        setLoad(true)
         e.preventDefault()
-        const res = await loginUser(email, password)
-        console.log(res)
-        if (res.success)
-            navigate("/")
-        else {
-            authState.error = ""
+        try {
+            const res = await loginUser(email, password)
+            console.log(res)
+            if (res.success) {
+                setLoad(false)
+                navigate("/")
+            }
+        } catch (error) {
+            console.log(authState.error)
         }
+
     }
 
 
@@ -48,15 +55,17 @@ const Login = () => {
                         mb={3}
                         onChange={(e) => setPassword(e.target.value)}
                     />
+
                     <Button
                         mt={4}
-                        bg="gray.800"
                         color="white"
+                        bg="gray.800"
                         type="submit"
-                        onClick={login}
+                        onClick={handleClick}
                     >
-                        Submit
+                        {!load ? "Submit" : <CircularProgress isIndeterminate color="gray.800" />}
                     </Button>
+
                 </FormControl>
                 <Text mt={5} fontSize={20} fontWeight={10}>Create a new account?{"  "}
                     <Link to="/signup" style={{ fontSize: "1.2rem", fontWeight: "bold" }}>

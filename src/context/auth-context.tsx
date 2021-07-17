@@ -48,7 +48,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const loginUser = async (email: string, password: string) => {
         try {
             const res = await axios.post('https://queez-backend.mdbilal420.repl.co/login', { email, password });
-            if (res.data.success) {
+            if (res.status === 200) {
                 authDispatch({ type: "LOGIN", payload: res.data })
             }
 
