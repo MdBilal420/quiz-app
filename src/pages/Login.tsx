@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('kane@gmail.com');
+    const [password, setPassword] = useState('123456');
     const { authState, loginUser } = useAuth()
     const navigate = useNavigate()
     const [load, setLoad] = useState<boolean>(false)
@@ -43,7 +43,9 @@ const Login = () => {
                         <CloseButton onClick={() => navigate('/login')} position="absolute" right="8px" top="8px" />
                     </Alert>}
                     <FormLabel>Email address</FormLabel>
-                    <Input type="email" placeholder="Email"
+                    <Input type="email"
+                        placeholder="Email"
+                        value={email}
                         name="email"
                         mb={3}
                         onChange={(e) => setEmail(e.target.value)}
@@ -51,6 +53,7 @@ const Login = () => {
 
                     <FormLabel>Password</FormLabel>
                     <Input placeholder="Password" type="password"
+                        value={password}
                         name="password"
                         mb={3}
                         onChange={(e) => setPassword(e.target.value)}
